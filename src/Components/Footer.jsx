@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { FaFacebook, FaInstagram, FaPinterest, FaTwitterSquare } from 'react-icons/fa'
 
 const Footer = () => {
+  
+    
     return (
         <footer className='bg-gray-900 text-gray-200 py-10'>
             <div className='max-w-7xl mx-auto px-4 md:flex md:justify-between'>
@@ -22,11 +24,13 @@ const Footer = () => {
                 <div className='mb-6 md:mb-0'>
                     <h3 className='text-xl font-semibold'>Customer Service</h3>
                     <ul className='mt-2 text-sm space-y-2'>
-                        <li>Contact Us</li>
-                        <li>Shipping & Returns</li>
-                        <li>FAQs</li>
-                        <li>Order Tracking</li>
-                        <li>Size Guide</li>
+                          <Link to={'/'}  className="cursor-pointer "><li>Home</li></Link>
+                           <Link to={"/products"}  className="cursor-pointer"><li>Shopping</li></Link>
+                           <Link to={"/about"}  className="cursor-pointer"><li>About US</li></Link>
+                        <Link to={"/contact"}  className="cursor-pointer"><li>Contact Us</li></Link>
+                        <Link to={"/order"} className="cursor-pointer"><li>Order Tracking</li></Link>
+                        <Link to={"/help"} className="cursor-pointer"><li>Help</li></Link>
+
                     </ul>
                 </div>
                 {/* social media links */}

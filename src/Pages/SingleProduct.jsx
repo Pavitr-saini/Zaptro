@@ -4,12 +4,25 @@ import { useParams } from 'react-router-dom'
 import Breadcrums from '../Components/Breadcrums.jsx'
 import { IoCartOutline } from 'react-icons/io5'
 import { useCartContext } from '../Context/CartContext.jsx';
+import Loader from "/src/assets/Loader.json"
+import Lottie from "lottie-react"
+import { useWishlist } from '../Context/WishlistContext.jsx'
+import { FaHeart } from 'react-icons/fa'
 
 
 function SingleProduct() {
     const param = useParams()
     const [singleProduct, setSingleProduct] = useState("")
      const {addToCart} = useCartContext()
+      const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+         
+         const handleWishlist = () => {
+             if (isInWishlist(singleProduct.id)) {
+                 removeFromWishlist(singleProduct.id);
+             } else {
+                 addToWishlist(singleProduct);
+             }
+         };
 
   
     const getSingleProduct = async ()=>{
@@ -39,9 +52,12 @@ function SingleProduct() {
           {/* Product image */}
 <div className='w-full'>
               <img src={singleProduct.image} alt={singleProduct.title} className='rounded-2xl w-full object-cover' />
+              
 </div>
 {/* Product details */}
             <div className='flex flex-col gap-6'>
+            
+            
               <h1 className='text-2xl font-bold text-gray-800'>{singleProduct.title}</h1>
               <div className='text-grey-700'>{singleProduct.category.toUpperCase()}</div>
               <p className='text-xl text-red-500 font-bold'>${singleProduct.price}</p>
@@ -65,9 +81,14 @@ function SingleProduct() {
                 </div>
               </div>
                :
-                <div className='flex items-center justify-center h-[400px]'>
-       Finding Products...
-       </div> 
+          <div className="flex flex-col items-center justify-center h-[70vh]">
+            <Lottie
+              animationData={Loader}
+              loop={true}
+              className="w-32 h-32"
+            />
+            <p className="mt-4 text-gray-600">Loading products...</p>
+          </div>
      }
     </>
   )

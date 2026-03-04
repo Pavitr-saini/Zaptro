@@ -9,13 +9,21 @@ import Navbar from './Components/Navbar.jsx'
 import Footer from './Components/Footer.jsx'
 import SingleProduct from './Pages/SingleProduct.jsx'
 import CategoryProduct from './Pages/CategoryProduct.jsx'
-// import { useCartContext } from './Context/CartContext.jsx'
+import Payment from './Pages/Payment.jsx'
+import Order from './Pages/Order.jsx'
+import Help from './Pages/Help.jsx'
+import SingleOrder from './Pages/SingleOrder.jsx'
+import { Divide } from 'lucide-react'
+import Wishlist from './Pages/Wishlist.jsx'
+import Cancel from './Pages/Cancel.jsx'
+
 
 
 function App() {
 
 
   return (
+    
     <BrowserRouter>
     <Navbar />
       <Routes>
@@ -26,6 +34,12 @@ function App() {
         <Route path="/about" element={<About/>} />
         <Route path="/products/:id" element={<SingleProduct/>} />
         <Route path='/category/:category' element={<CategoryProduct/>} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/order" element={<Order />} />
+        <Route path="/order/:id" element={<SingleOrder/>} />
+        <Route path="/help" element={<Help />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/cancel/:id" element={<Cancel />} />
       </Routes>
       <Footer />
     </BrowserRouter>

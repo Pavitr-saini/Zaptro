@@ -3,7 +3,8 @@ import React, { useEffect,useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { ChevronLeft } from 'lucide-react'
 import ProductListView from '../Components/ProductListView.jsx';
-
+import Loader from "/src/assets/Loader.json"
+import Lottie from "lottie-react"
 
 
 function CategoryProduct() {
@@ -18,7 +19,7 @@ function CategoryProduct() {
         try {
             const res = await axios.get(`https://fakestoreapi.com/products/category/${category}`)
             const data = res.data
-            console.log(data);
+            
             
             
             
@@ -45,9 +46,14 @@ function CategoryProduct() {
                         })
                       }
                 </div>
-              ) : (<div className='flex items-center justify-center h-[400px]'>
-                Finding Products....
-            </div>)
+              ) : (<div className="flex flex-col items-center justify-center h-[70vh]">
+                  <Lottie
+                      animationData={Loader}
+                      loop={true}
+                      className="w-32 h-32"
+                  />
+                  <p className="mt-4 text-gray-600">Loading products...</p>
+              </div>)
         }
     </div>
   )

@@ -4,11 +4,16 @@ import { useEffect } from 'react';
 import Loading from '../assets/Loading.gif'
 import { getData } from '../Context/DataContext.jsx';
 import ProductCard from '../Components/ProductCard.jsx';
-import { Divide } from 'lucide-react'
+import { Divide  } from 'lucide-react'
 import Pagination from '../Components/Pagination.jsx';
 import FilterSection from '../Components/FilterSection.jsx'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import MobileFilter from '../Components/MobileFilter.jsx';
+import Loader from "/src/assets/Loader.json"
+import Lottie from "lottie-react"
+
+
+
 function Products() {
   const {data,FetchAllProducts} = getData()
   const [search, setSearch] = useState("")
@@ -49,6 +54,7 @@ function Products() {
             {
               filteredData?.length > 0 ? (
                     <div className='flex flex-col justify-center items-center'>
+                      <p className='my-2 text-sm '>Use <span className='font-bold'>"WELCOME20"</span> to get $20 OFF</p>
                       <div className='grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-7 mt-10'>
                         {
                         filteredData?.slice(page * 8 - 8, page * 8).map((product, index) => {
@@ -59,7 +65,7 @@ function Products() {
                       <Pagination pageHandler={pageHandler} page={page} dynamicPage={dynamicPage} />
                 </div>
               ):(
-                      <div className='flex justify-center items-center md:h-[600px] md:w-[900px] mt-10'>
+                      <div className='flex justify-center items-center md:h-[500px] md:w-[600px] mt-10'>
                         <DotLottieReact
                           src="https://lottie.host/5f300630-796c-4022-9545-bb585bdc3607/9okBVu2JHJ.lottie"
                           loop
@@ -79,11 +85,13 @@ function Products() {
            {/* <Pagination pageHandler={pageHandler} page={page} dynamicPage={dynamicPage} /> */}
             </>
           ):(
-              <div className='flex items-center justify-center h-[400px]'>
-                {/* <video muted autoPlay loop>
-                  <source src={Loading} type='video/gif' />
-                </video> */}
-                Finding Product....
+              <div className="flex flex-col items-center justify-center h-[70vh]">
+                <Lottie
+                  animationData={Loader}
+                  loop={true}
+                  className="w-32 h-32"
+                />
+                <p className="mt-4 text-gray-600">Loading products...</p>
               </div>
           )
         }
