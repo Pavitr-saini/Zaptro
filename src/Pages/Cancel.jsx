@@ -57,7 +57,7 @@ const Cancel = () => {
         <img className='w-70  sm:w-40 p-2' src={cancelItem.image} alt="" />
       </div>
       </div>
-      {/* Reason section */}
+      {/* Reason section 2 */}
       <div className='px-4 py-8'>
       <div className="w-full  rounded-lg border bg-white p-4">
         <h2 className="mb-4 text-lg sm:text-2xl font-semibold">Reason For Cancellation</h2>
