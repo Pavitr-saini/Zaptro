@@ -28,6 +28,7 @@ function SingleProduct() {
     const getSingleProduct = async ()=>{
         try {
             const res = await axios.get(`https://fakestoreapi.com/products/${param.id}`)
+         
             const product =res.data;
             setSingleProduct(product)    
          

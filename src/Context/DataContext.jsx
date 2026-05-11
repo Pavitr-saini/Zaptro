@@ -13,6 +13,8 @@ export const DataProvider = ({ children }) => {
       
       
       setData(res.data);
+      console.log(res.data);
+      
     } catch (error) {
       console.error('Error fetching products:', error);
     }  

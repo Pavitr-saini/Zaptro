@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+    font-family: 'Outfit', sans-serif;
+    @apply bg-slate-50 text-slate-800 antialiased;
+}
 
 .cl-avatarBox {
     width: 3rem;
@@ -15,8 +19,6 @@
 
 /* input colors */
 input {
-    background-color: #ffffff;
-    accent-color: red;
-    border: 1px solid #ccc;
-    color: #333;
+    @apply bg-white border border-slate-200 text-slate-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all;
+    accent-color: #e11d48;
 }
