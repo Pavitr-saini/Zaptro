@@ -1,16 +1,55 @@
-# React + Vite
+# Zeptro — E-Commerce Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Zeptro is a fully responsive e-commerce application built with **React.js** and **Tailwind CSS**, featuring authentication, product discovery, cart and wishlist management, and complete order workflows.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* 🔐 Secure user authentication with **Clerk**
+* 🛍️ Product browsing and product search
+* 🏷️ Category-based product filtering
+* ❤️ Wishlist management
+* 🛒 Shopping cart functionality
+* 📦 Order placement, tracking, and cancellation
+* 🔗 REST API integration for product and user data
+* 📱 Fully responsive UI
+* 🧩 Reusable React components
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **React.js**
+* **JavaScript**
+* **Tailwind CSS**
+* **REST APIs**
+* **Clerk**
+* **Git & GitHub**
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+cd Zeptro
+npm install
+npm run dev
+```
+
+Create a `.env` file and add the required API and Clerk environment variables.
+
+> Never commit API keys or other sensitive credentials to GitHub.
+
+## Live Demo
+
+[View Live Demo](https://zaptro-one.vercel.app/)
+
+## Key Highlights
+
+* Built a complete e-commerce frontend using React.js.
+* Integrated REST APIs for dynamic product and user data.
+* Implemented authentication and protected user functionality.
+* Developed cart, wishlist, search, filtering, and order management features.
+* Created responsive and reusable UI components using Tailwind CSS.
+
+## Author
+
+**Pavitr Saini**
+Frontend Developer | React.js Developer
+
